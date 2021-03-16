@@ -1,0 +1,19 @@
+<div class="category-content">
+    <div class="search-box">
+        <input
+        autocomplete="off"
+        type="text"
+        [(ngModel)]="searchBox"
+        placeholder="Start typing document name..."
+        (keyup)="onSearchText(searchBox)"
+      />
+    </div>
+    <div class="card-content">
+        <div class="card" *ngFor="let category of dataSource">
+            <div class="card__category"> 
+                <div class="card__category__name" [ngStyle]="{'background-color': category.color}">{{category.category}} </div>
+            </div>
+            <div class="card__sub-category"> {{category.subCategory}} </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+$background-color: #eceaea;
+$breakpoint: 720px;
+
+:host {
+  .document-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 16px;
+    height: 100%;
+    background-color: $background-color;
+
+    .document-header {
+      font-weight: bold;
+      .title {
+        font-size: 18px;
+        padding-bottom: 8px;
+      }
+    }
+
+    .document-item {
+      display: flex;
+      flex: 1 1 auto;
+      margin-top: 24px;
+
+      &__list {
+        &__value {
+          padding-bottom: 16px;
+          cursor: pointer;
+          opacity: 0.5;
+          margin-right: 8px;
+        }
+      }
+
+      .active {
+        opacity: 1;
+        font-weight: bold;
+      }
+    }
+  }
+
+  /* Responsive Styles */
+  @media only screen and (min-width: $breakpoint) {
+    .document-item {
+      display: flex;
+      flex-direction: row;
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+      }
+
+      &__content {
+        width: 70%;
+      }
+    }
+  }
+  @media only screen and (max-width: $breakpoint) {
+    .document-item {
+      display: flex;
+      flex-direction: column;
+
+      &__list {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      &__content {
+        width: 100%;
+      }
+    }
+  }
+}

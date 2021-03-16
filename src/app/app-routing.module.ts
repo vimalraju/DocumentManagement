@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DocumentListComponent } from './feature/document-management/';
 
+const routes: Routes = [
+  { path: '', component: DocumentListComponent },
 
-const routes: Routes = [];
+  // otherwise redirect to home
+  { path: '**', redirectTo: ''  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

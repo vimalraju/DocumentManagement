@@ -11,16 +11,27 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "resolveJsonModule" : true,
+    "esModuleInterop" : true,
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "document-management": [
+        "dist/document-management"
+      ],
+      "document-management/*": [
+        "dist/document-management/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }
+  
 }

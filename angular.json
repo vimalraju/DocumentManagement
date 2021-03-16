@@ -124,6 +124,41 @@
           }
         }
       }
+    },
+    "document-management": {
+      "projectType": "library",
+      "root": "projects/document-management",
+      "sourceRoot": "projects/document-management/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/document-management/tsconfig.lib.json",
+            "project": "projects/document-management/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/document-management/src/test.ts",
+            "tsConfig": "projects/document-management/tsconfig.spec.json",
+            "karmaConfig": "projects/document-management/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/document-management/tsconfig.lib.json",
+              "projects/document-management/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "DocumentProject"
 }

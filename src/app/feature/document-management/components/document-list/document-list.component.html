@@ -1,0 +1,17 @@
+<div class="document-content">
+    <div class="document-header">
+        <div class="title">{{title}}</div>
+        <div class="sub-title">{{subTitle}}</div>
+    </div>
+    <div class="document-item">
+        <div class="document-item__list">
+            <div class="document-item__list__value active" [ngClass]="{active: (selectedCategory === 'All')}" (click) = "filterByCategory('All')">All</div> 
+            <div class="document-item__list__value" [ngClass]="{active: (selectedCategory === category.key)}" (click) = "filterByCategory(category.key)" *ngFor="let category of groupedResults | keyvalue">
+                {{category.key}}
+            </div>
+        </div>
+        <div class="document-item__content" >
+            <app-view-category [dataList]="selectedCategoryList"></app-view-category>
+        </div>
+    </div>
+</div>
